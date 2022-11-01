@@ -21,16 +21,18 @@ def loginForm(inputType, value) :
   driver.find_element(By.CSS_SELECTOR, 'button').click()
 
 def connexion() :
-  print('Start connect me')
+  print('Connect me')
   loginForm('email', 'MAIL')
   time.sleep(1)
   loginForm('password', 'PASSWORD')
 
 def fillMood(citation) :
-  time.sleep(20)
+  print('I fill today mood')
+  time.sleep(15)
   driver.find_element(By.ID, 'id-smile-happy').click()
   driver.find_element(By.CSS_SELECTOR, '.ea-field__control-container textarea').send_keys(citation)
-
+  button = driver.find_elements(By.XPATH, "//span[text()='Exprimer mon humeur']")
+  button[0].click()
 
 def start(citation) :
   chrome_options = Options()

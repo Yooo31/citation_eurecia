@@ -1,8 +1,18 @@
 from citation import *
 from eurecia import *
 
-citation = getCitation()
-print(citation)
+import datetime
 
-start(citation)
-print('Mood is send !')
+while (1) :
+  now = datetime.datetime.now()
+  actualHour = now.hour
+  actualMinute = now.minute
+
+  if (actualHour == 8 and actualMinute == 30):
+    print(actualHour, actualMinute)
+
+    citation = getCitation()
+    print(citation)
+
+    start(citation)
+    print('Mood is send !')
